@@ -1,4 +1,5 @@
 const authorController = require("../controllers/authorController");
+const { Article, Author } = require("../model/model");
 
 const router = require("express").Router();
 
@@ -6,8 +7,16 @@ const router = require("express").Router();
 router.post("/", authorController.addAuthor);
 
 //GET ALL AUTHORS
-router.get("/", (req, res) => {
-    res.send("User!");
+router.get("/", async (req, res) => {
+    try {
+      const allArticles = await Author.find();
+      res.json({
+        status: 200,
+        data: allArticles,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
   });
 
 // //GET AN AUTHOR
