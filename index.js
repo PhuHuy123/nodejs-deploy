@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 const authorRoute = require("./routes/author");
 const articleRoute = require("./routes/article");
+const product = require("./routes/product");
 const userRoute = require("./routes/user");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 app.use("/api/user", userRoute);
 app.use("/api/author", authorRoute);
 app.use("/api/article", articleRoute);
+app.use("/api/product", product);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
