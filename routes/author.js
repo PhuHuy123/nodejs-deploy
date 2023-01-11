@@ -6,7 +6,9 @@ const router = require("express").Router();
 router.post("/", authorController.addAuthor);
 
 //GET ALL AUTHORS
-router.get("/", authorController.getAllAuthors);
+router.get("/", (req, res) => {
+    res.send("User!");
+  });
 
 // //GET AN AUTHOR
 router.get("/:id", authorController.getAnAuthor);
