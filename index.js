@@ -13,7 +13,7 @@ dotenv.config();
 app.use(cors());
 
 app.use(express.json({ extended: false }));
-mongoose.connect(process.env.MONGODB_URL, () => {
+mongoose.connect('mongodb+srv://PhuHuy_Articles:Huy=111111@cluster0.dsi0e08.mongodb.net/?retryWrites=true&w=majority', () => {
   console.log("Connect database successful");
 });
 app.use(bodyParser.json({limit:"50mb"}));
