@@ -1,14 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const app = express();
 var bodyParser = require("body-parser");
-const authorRoute = require("./routes/author");
-const articleRoute = require("./routes/article");
-const product = require("./routes/product");
-const userRoute = require("./routes/user");
+const authorRoute = require("./src/routes/author");
+const articleRoute = require("./src/routes/article");
+const product = require("./src/routes/product");
+const upload = require("./src/routes/upload");
+const userRoute = require("./src/routes/user");
 const dotenv = require("dotenv");
 dotenv.config();
-const app = express();
 app.use(cors());
 
 app.use(express.json({ extended: false }));

@@ -40,6 +40,9 @@ const articleSchema = new Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+  },
   content: {
     type: String,
     required: true,

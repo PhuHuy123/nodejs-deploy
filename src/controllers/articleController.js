@@ -4,6 +4,9 @@ const articleController = {
   //ADD A POST
   addAArticle: async (req, res) => {
     try {
+      if(req.file?.fieldname === 'image'){
+        req.body.image = req.file?.path
+      }
       const newArticle = new Article(req.body);
       const savedArticle = await newArticle.save();
       if (req.body.author) {

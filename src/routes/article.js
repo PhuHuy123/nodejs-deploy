@@ -1,9 +1,10 @@
 const articleController = require("../controllers/articleController");
+const fileUploader = require('../configs/cloudinary.config');
 
 const router = require("express").Router();
 
 //ADD A POST
-router.post("/", articleController.addAArticle);
+router.post("/", fileUploader.single('image'), articleController.addAArticle);
 
 //GET ALL POSTS
 router.get("/", articleController.getAllArticles);
