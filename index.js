@@ -18,7 +18,7 @@ mongoose.connect('mongodb+srv://PhuHuy_Articles:Huy=111111@cluster0.dsi0e08.mong
 });
 app.use(bodyParser.json({limit:"50mb"}));
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send(`${process.env.MONGODB_URL}`);
 });
 app.use("/api/user", userRoute);
 app.use("/api/author", authorRoute);
