@@ -67,7 +67,7 @@ const addUser = async (req, res) => {
 //GET ALL USER
 const getAllUsers = async (req, res) => {
   try {
-    // const users = await User.find();
+    const users = await User.find();
     res.json({
       status: 200,
       // data: users,
