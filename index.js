@@ -21,9 +21,9 @@ app.get("/", (req, res) => {
   res.send(`${process.env.MONGODB_URL}`);
 });
 app.use("/api/user", userRoute);
-app.use("/api/author", authorRoute);
-app.use("/api/article", articleRoute);
-app.use("/api/product", product);
+// app.use("/api/author", authorRoute);
+// app.use("/api/article", articleRoute);
+// app.use("/api/product", product);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
