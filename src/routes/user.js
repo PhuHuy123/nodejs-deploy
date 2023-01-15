@@ -7,19 +7,8 @@ router.put("/login", userController.loginUser);
 router.post("/", userController.addUser);
 
 // GET ALL USERS
-// router.get("/", userController.getAllUsers);
+router.get("/", userController.getAllUsers);
 
-router.get("/", async (req, res) => {
-  try {
-    res.json({
-      status: 200,
-      message: "Get data has successfully",
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).send("Server error");
-  }
-});
 //GET AN USER
 router.get("/:id", userController.getAnUser);
 
